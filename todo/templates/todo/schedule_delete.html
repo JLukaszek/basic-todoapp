@@ -1,0 +1,14 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<form method="post">
+    <div class="card order-primary mb-2 text-center mx-auto" style="width: 20rem;">
+        {% csrf_token %}
+        <p class="text-primary">Do You want to delete "{{ schedules.title }}?</p>
+        <p class="text-primary">If yes press the delete button.</p>
+        <div class="col-3 mx-auto">
+            <button class="btn btn-outline-danger ml-2" type="submit">Delete</button>
+        </div>
+    </div>
+</form>
+{% endblock content %}

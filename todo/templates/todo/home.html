@@ -1,0 +1,18 @@
+{% extends 'todo/base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <h1 class="text-primary">Schedule list</h1>
+</div>
+{% for schedule in schedules_list %}
+    <div class="card border-primary mb-2 text-center mx-auto" style="width: 20rem;">
+        <div class="card-body">
+            <h4 class="card-title">{{ schedule.title }}</h4>
+            <a href="{% url 'schedule_edit' schedule.pk %}" class="fs-6 card-link">Edit</a>
+            <a href="{% url 'schedule_delete' schedule.pk %}" class="fs-6 text-danger card-link">Delete</a>
+        </div>
+    </div>
+{% endfor %}
+{% endblock content %}
